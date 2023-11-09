@@ -5,6 +5,6 @@
 #include "utils.h"
 
 t_canvas    canvas(int width, int height);
-t_camera    cameta(t_canvas *canvas, t_point3 origin);
+t_camera    camera(t_canvas *canvas, t_point3 origin);
 
 #endif

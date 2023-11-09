@@ -1,5 +1,7 @@
 #include "../../inc/utils.h"
 
+
+//vector3 생성자
 t_vec3  vec3(double x, double y, double z)
 {
     t_vec3 vec;
@@ -11,6 +13,7 @@ t_vec3  vec3(double x, double y, double z)
     return vec;
 }
 
+//포인트3 생생성성자
 t_point3    point3(double x, double y, double z)
 {
     t_point3 point;
@@ -22,6 +25,7 @@ t_point3    point3(double x, double y, double z)
     return point;
 }
 
+//색상3 생성자
 t_point3    color3(double r, double g, double b)
 {
     t_color3 color;
@@ -33,6 +37,7 @@ t_point3    color3(double r, double g, double b)
     return color;
 }
 
+//벡터값설정
 void    vset(t_vec3 *vec, double x, double y, double z)
 {
     vec->x = x;
@@ -40,16 +45,19 @@ void    vset(t_vec3 *vec, double x, double y, double z)
     vec->z = z;
 }
 
+//벡터길이제곱
 double vleng2(t_vec3 vec)
 {
     return (vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
 }
 
+//벡터길이
 double vleng(t_vec3 vec)
 {
     return (sqrt(vleng2(vec)));
 }
 
+//벡터합
 t_vec3 vplus(t_vec3 vec, t_vec3 vec2)
 {
     vec.x += vec2.x;
@@ -59,6 +67,7 @@ t_vec3 vplus(t_vec3 vec, t_vec3 vec2)
     return vec;
 }
 
+//벡터합2
 t_vec3 vplus2(t_vec3 vec, double x, double y, double z)
 {
     vec.x += x;
@@ -68,6 +77,7 @@ t_vec3 vplus2(t_vec3 vec, double x, double y, double z)
     return vec;
 }
 
+//벡터차
 t_vec3 vminus(t_vec3 vec, t_vec3 vec2)
 {
     vec.x -= vec2.x;
@@ -77,6 +87,15 @@ t_vec3 vminus(t_vec3 vec, t_vec3 vec2)
     return vec;
 }
 
+t_vec3      vminus_(t_vec3 vec, double x, double y, double z)
+{
+    vec.x -= x;
+    vec.y -= y;
+    vec.z -= z;
+    return (vec);
+}
+
+// 벡터 * 스칼라 곱연산
 t_vec3  vmult(t_vec3 vec, double t)
 {
     vec.x *= t;
@@ -86,6 +105,7 @@ t_vec3  vmult(t_vec3 vec, double t)
     return vec;
 }
 
+//벡터 값값끼리 곱연산
 t_vec3 vmult_(t_vec3 vec, t_vec3 vec2)
 {
     vec.x *= vec2.x;
@@ -94,6 +114,7 @@ t_vec3 vmult_(t_vec3 vec, t_vec3 vec2)
     return (vec);
 }
 
+// 벡벡터 스칼라 나누기
 t_vec3      vdivide(t_vec3 vec, double t)
 {
     vec.x *= 1 / t;
@@ -103,12 +124,13 @@ t_vec3      vdivide(t_vec3 vec, double t)
     return vec;
 }
 
-
+//벡터내적
 double      vdot(t_vec3 vec, t_vec3 vec2)
 {
     return (vec.x * vec2.x + vec.y * vec2.y + vec.z * vec2.z);
 }
 
+//벡터외적
 t_vec3      vcross(t_vec3 vec, t_vec3 vec2)
 {
     t_vec3 new;
@@ -119,6 +141,7 @@ t_vec3      vcross(t_vec3 vec, t_vec3 vec2)
     return (new);
 }
 
+//단위벡터
 t_vec3      vunit(t_vec3 vec)
 {
     double len = vlength(vec);
@@ -133,6 +156,8 @@ t_vec3      vunit(t_vec3 vec)
     return (vec);
 }
 
+
+// 두 벡터의 원소를 비교해 작은값만 반환
 t_vec3  vmin(t_vec3 vec1, t_vec3 vec2)
 {
     if (vec1.x > vec2.x)
