@@ -24,6 +24,6 @@ double      vdot(t_vec3 vec, t_vec3 vec2);
 t_vec3      vcross(t_vec3 vec, t_vec3 vec2);
 t_vec3      vunit(t_vec3 vec);
 t_vec3      vmin(t_vec3 vec1, t_vec3 vec2);
-
+t_color3    ray_color(t_ray *r, t_sphere *sphere);
 
 #endif

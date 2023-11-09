@@ -46,15 +46,15 @@ void    vset(t_vec3 *vec, double x, double y, double z)
 }
 
 //벡터길이제곱
-double vleng2(t_vec3 vec)
+double vlength2(t_vec3 vec)
 {
     return (vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
 }
 
 //벡터길이
-double vleng(t_vec3 vec)
+double vlength(t_vec3 vec)
 {
-    return (sqrt(vleng2(vec)));
+    return (sqrt(vlength2(vec)));
 }
 
 //벡터합

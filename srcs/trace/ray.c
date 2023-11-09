@@ -27,11 +27,14 @@ t_ray       ray_primary(t_camera *cam, double u, double v)
     return (ray);
 }
 
-t_color3    ray_color(t_ray *r)
+t_color3    ray_color(t_ray *ray, t_sphere *sphere)
 {
     double  t;
 
-    t = 0.5 * (r->dir.y + 1.0);
+    if (hit_sphere(sphere, ray))
+        return (color3(1, 0, 0));
+    else
+        t = 0.5 * (ray->dir.y + 1.0);
     // (1-t) * 흰색 + t * 하늘색
     return (vplus(vmult(color3(1, 1, 1), 1.0 - t), vmult(color3(0.5, 0.7, 1.0), t)));
 }
